@@ -11,16 +11,14 @@ app.use(cors());
 app.use(express.json());
 
 // conexión a la base de datos MongoDB
-// const uri = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
-// mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
-// const connection = mongoose.connection;
-// connection.once('open', () => {
-//   console.log('Conexión exitosa con la base de datos');
-// });
+const uri = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+const connection = mongoose.connection;
+connection.once('open', () => {
+  console.log('Conexión exitosa con la base de datos');
+});
 
-// definición de rutas de la API
-// const tareasRouter = require('./routes/tareas');
-// app.use('/tareas', tareasRouter);
+
 
 // inicio del servidor
 app.listen(port, () => {
