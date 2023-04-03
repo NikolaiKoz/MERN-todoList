@@ -29,3 +29,7 @@ Ejecutar el frontend en modo producción: npm run build y serve -s build.
 Configurar nodemon: npm install nodemon --save-dev.
 
 Ejecutar el backend con nodemon: nodemon index.js.
+
+Que es nodemon?
+
+Es un demonio, una utilidad que monitorea los cambios en el código fuente que se está desarrollando y automáticamente reinicia el servidor
